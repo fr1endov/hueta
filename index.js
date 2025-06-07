@@ -1,6 +1,9 @@
+require('dotenv').config();
+
+console.log('ВСЕ ПЕРЕМЕННЫЕ ОКРУЖЕНИЯ:', process.env);
+console.log("🔍 DISCORD_TOKEN:", process.env.DISCORD_TOKEN || "переменная не найдена!");
 
 const { Client, GatewayIntentBits } = require('discord.js');
-require('dotenv').config();
 
 const client = new Client({
     intents: [
@@ -14,7 +17,6 @@ client.once('ready', () => {
 });
 
 client.on('guildMemberAdd', async member => {
-    // Название роли, которую бот должен выдать
     const roleName = 'member'; 
     const role = member.guild.roles.cache.find(role => role.name === roleName);
 
@@ -29,6 +31,5 @@ client.on('guildMemberAdd', async member => {
         console.warn(`⚠️ Роль "${roleName}" не найдена на сервере.`);
     }
 });
-console.log("🔍 DISCORD_TOKEN:", process.env.DISCORD_TOKEN);
 
 client.login(process.env.DISCORD_TOKEN);
