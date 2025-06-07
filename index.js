@@ -29,5 +29,6 @@ client.on('guildMemberAdd', async member => {
         console.warn(`⚠️ Роль "${roleName}" не найдена на сервере.`);
     }
 });
+console.log("🔍 DISCORD_TOKEN:", process.env.DISCORD_TOKEN);
 
 client.login(process.env.DISCORD_TOKEN);
