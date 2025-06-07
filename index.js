@@ -1,7 +1,4 @@
-//require('dotenv').config();
 
-console.log('ВСЕ ПЕРЕМЕННЫЕ ОКРУЖЕНИЯ:', process.env);
-console.log("🔍 DISCORD_TOKEN:", process.env.DISCORD_TOKEN || "переменная не найдена!");
 
 const { Client, GatewayIntentBits } = require('discord.js');
 
