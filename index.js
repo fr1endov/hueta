@@ -14,7 +14,7 @@ client.once('ready', () => {
 });
 
 client.on('guildMemberAdd', async member => {
-    const roleName = 'member'; 
+    const roleName = 'guest'; 
     const role = member.guild.roles.cache.find(role => role.name === roleName);
 
     if (role) {
